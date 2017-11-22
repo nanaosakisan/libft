@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-char    *ft_strstr(const char *s1, const char *s2)
+char    *ft_strstr(const char *haystack, const char *needle)
 {
     int i;
     int j;
 
     i = 0;
     j = 0;
-    while(s1[i] && s2[j])
+    while(haystack[i] && needle[j])
     {
-        while(s1[i] == s2[j])
+        while(haystack[i] == needle[j])
         {
-            if(!s2[j + 1])
-                return((char *)&s1[i - j]);
+            if(!needle[j + 1])
+                return((char *)&haystack[i - j]);
             i++;
             j++;
         }
