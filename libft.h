@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int		main(void);
+int		main(int argc, char **argv);
 void    ft_putchar(char c);
 void    ft_putstr(const char *s);
 size_t	ft_strlen(const char *s);
@@ -60,5 +60,7 @@ char    *ft_strstr(const char *haystack, const char *needle);
 char	*ft_strsub(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(const char *s);
+int		ft_count_word(const char *s, char c);
+char	**ft_strsplit(const char *s, char c);
 
 #endif

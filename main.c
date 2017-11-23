@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-int		main()
+int		main(int argc, char **argv)
 {
-	const char s[20] = "   \t buh";
-
-	ft_putstr(ft_strtrim(s));
+	if (!argc)
+		return(-1);
+	ft_strsplit(argv[1], argv[2][0]);
 	return (0);
 }
