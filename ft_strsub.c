@@ -21,6 +21,6 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 		return (NULL);
 	if (!(dest = ft_strnew(len)))
 		return (NULL);
-	ft_strncpy(dest,(s + start), (len));
+	ft_strncpy(dest, (s + start), (len));
 	return (dest);
 }

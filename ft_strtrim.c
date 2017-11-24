@@ -5,18 +5,6 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iporsenn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:00:28 by iporsenn          #+#    #+#             */
-/*   Updated: 2017/11/22 16:00:29 by iporsenn         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: iporsenn <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/22 16:00:13 by iporsenn          #+#    #+#             */
 /*   Updated: 2017/11/22 16:00:14 by iporsenn         ###   ########.fr       */
 /*                                                                            */
@@ -26,8 +14,8 @@
 
 char	*ft_strtrim(const char *s)
 {
-	char			*dest;
-	size_t			len;
+	char	*dest;
+	size_t	len;
 
 	if (!s)
 		return (NULL);
@@ -35,8 +23,8 @@ char	*ft_strtrim(const char *s)
 	while (*s == ' ' || *s == '\n' || *s == '\t')
 		s++;
 	len = ft_strlen(s) - 1;
-	while(s[len] == ' ' || s[len] == '\n' || s[len] == '\t')
+	while (s[len] == ' ' || s[len] == '\n' || s[len] == '\t')
 		len--;
 	len += 1;
- 	return (!(dest = ft_strsub(s, 0, len))) ? NULL : dest;
+	return (!(dest = ft_strsub(s, 0, len))) ? NULL : dest;
 }

@@ -55,7 +55,6 @@ SRC_NAME =	ft_bzero.c		\
 			ft_strsub.c		\
 			ft_strjoin.c	\
 			ft_strtrim.c	\
-			ft_count_word.c	\
 			ft_strsplit.c
 
 SRC =  $(addprefix $(SRC_PATH), $(SRC_NAME))

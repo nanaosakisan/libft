@@ -1,7 +1,38 @@
-#include "libft.h"
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iporsenn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/24 13:09:25 by iporsenn          #+#    #+#             */
+/*   Updated: 2017/11/24 13:09:27 by iporsenn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	**ft_malloc_array(const char *s, char c)
+#include "libft.h"
+
+int			ft_count_word(const char *s, char c)
+{
+	int i;
+	int cpt;
+
+	i = 0;
+	cpt = 0;
+	while (s[i])
+	{
+		if (!s || !c)
+			return (0);
+		if (s[i] == c && !s[i - 1])
+			i++;
+		if ((s[i - 1] != c && s[i] == c) || (!s[i + 1] && s[i] != c))
+			cpt++;
+		i++;
+	}
+	return (cpt);
+}
+
+char		**ft_malloc_array(const char *s, char c)
 {
 	char	**array;
 	int		word;
@@ -15,31 +46,35 @@ char	**ft_malloc_array(const char *s, char c)
 	return (array);
 }
 
-size_t		ft_count_letter(const char *s, char c)
+size_t		ft_count_letter(const char *s, int i, char c)
 {
 	size_t len;
 
 	len = 0;
-	while (s[len] != c && s[len])
+	if (s[i] == c)
+		i++;
+	while (s[i] != c && s[i])
+	{
 		len++;
-	printf("len = %zu\n", len);
+		i++;
+	}
 	return (len);
 }
 
-char	**ft_fill_array(char **array, const char *s, char c)
+char		**ft_fill_array(char **array, const char *s, char c)
 {
-	unsigned int start;
+	int start;
 
 	start = 0;
 	while (s[start])
 	{
-		//printf("s[start] = %c\n", s[start]);
-		if (s[start] == c && s[start + 1] != c)
+		if ((s[start] != c && s[start - 1] == c)
+			|| (s[start] != c && !s[start - 1]))
 		{
-			*array = ft_strsub(s, start, ft_count_letter(s, c));
+			*array = ft_strsub(s, (unsigned int)start,
+								ft_count_letter(s, start, c));
 			array++;
-			//printf("letter = %zu", ft_count_letter(s, c));
-			start = start + ft_count_letter(s, c) - 1;
+			start = start + (int)ft_count_letter(s, start, c);
 		}
 		else
 			start++;
@@ -47,7 +82,7 @@ char	**ft_fill_array(char **array, const char *s, char c)
 	return (array);
 }
 
-char	**ft_strsplit(const char *s, char c)
+char		**ft_strsplit(const char *s, char c)
 {
 	char			**array;
 	int				i;
