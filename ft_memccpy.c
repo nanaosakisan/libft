@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iporsenn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:01:13 by iporsenn          #+#    #+#             */
-/*   Updated: 2017/11/22 16:01:15 by iporsenn         ###   ########.fr       */
+/*   Created: 2017/11/24 18:44:18 by iporsenn          #+#    #+#             */
+/*   Updated: 2017/11/24 18:44:25 by iporsenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int		main(int argc, char **argv)
+void	*fr_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	if (!argc)
-		return(-1);
-	printf("ft_atoi = %d\n", ft_atoi(argv[1]));
-	printf("atoi = %d\n", atoi(argv[1]));
-	return (0);
+	int i;
+
+	i = 0;
+	if (!dst || !src || !c || !n)
+		return (NULL);
+	while (dest[i] && src[i] && i <= n)
+	{
+		if (src[i] == c)
+			return (dest[i + 1]);
+		dest[i] = src[i];
+		i++;
+	}
+	return (NULL);
 }

@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iporsenn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:01:13 by iporsenn          #+#    #+#             */
-/*   Updated: 2017/11/22 16:01:15 by iporsenn         ###   ########.fr       */
+/*   Created: 2017/11/24 19:00:47 by iporsenn          #+#    #+#             */
+/*   Updated: 2017/11/24 19:00:50 by iporsenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int		main(int argc, char **argv)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (!argc)
-		return(-1);
-	printf("ft_atoi = %d\n", ft_atoi(argv[1]));
-	printf("atoi = %d\n", atoi(argv[1]));
-	return (0);
+	
 }

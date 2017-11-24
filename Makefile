@@ -55,7 +55,12 @@ SRC_NAME =	ft_bzero.c		\
 			ft_strsub.c		\
 			ft_strjoin.c	\
 			ft_strtrim.c	\
-			ft_strsplit.c
+			ft_strsplit.c	\
+			ft_atoi.c		\
+			ft_memset.c		\
+			ft_memcpy.c		\
+			ft_memccpy.c	\
+			ft_memmove.c
 
 SRC =  $(addprefix $(SRC_PATH), $(SRC_NAME))
 

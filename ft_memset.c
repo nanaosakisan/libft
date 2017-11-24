@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iporsenn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/22 16:01:13 by iporsenn          #+#    #+#             */
-/*   Updated: 2017/11/22 16:01:15 by iporsenn         ###   ########.fr       */
+/*   Created: 2017/11/24 18:17:35 by iporsenn          #+#    #+#             */
+/*   Updated: 2017/11/24 18:18:09 by iporsenn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int		main(int argc, char **argv)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if (!argc)
-		return(-1);
-	printf("ft_atoi = %d\n", ft_atoi(argv[1]));
-	printf("atoi = %d\n", atoi(argv[1]));
-	return (0);
+	size_t i;
+
+	i = 0;
+	if (!s || !c || !len)
+		return (NULL);
+	while (i <= len && b[i])
+	{
+		b[i] = c;
+		i++;
+	}
+	return (b);
 }
