@@ -13,11 +13,10 @@
 #include "libft.h"
 #include <stdio.h>
 
-int		main(int argc, char **argv)
+int		main(void)
 {
-	if (!argc)
-		return(-1);
-	printf("ft_atoi = %d\n", ft_atoi(argv[1]));
-	printf("atoi = %d\n", atoi(argv[1]));
+	if (argc < 2)
+		return (0);
+	printf("%s\n", ft_itoa(95123));
 	return (0);
 }

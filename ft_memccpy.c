@@ -14,16 +14,19 @@
 
 void	*fr_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int i;
+	size_t	i;
+	int		*ptr;
 
 	i = 0;
+	ptr = NULL;
+	ptr = (int *)src;
 	if (!dst || !src || !c || !n)
 		return (NULL);
-	while (dest[i] && src[i] && i <= n)
+	while (dst && ptr && i <= n)
 	{
-		if (src[i] == c)
-			return (dest[i + 1]);
-		dest[i] = src[i];
+		if (ptr[i] == c)
+			return (dst + (i + 1));
+		((unsigned char *)dst)[i] = ((unsigned char *)ptr)[i];
 		i++;
 	}
 	return (NULL);
