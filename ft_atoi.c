@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int		atoi2(const char *str)
+int		ft_atoi(const char *str)
 {
 	int i;
 	int neg;
@@ -22,7 +21,7 @@ int		atoi2(const char *str)
 	i = 0;
 	neg = 1;
 	ret = 0;
-	if (str[i] == '\t' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r'
+	while (str[i] == '\t' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r'
 		|| str[i] == '\n' || str[i] == ' ')
 		i++;
 	if (str[i] == '+' || str[i] == '-')

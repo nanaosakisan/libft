@@ -15,8 +15,15 @@
 
 int		main(void)
 {
-	if (argc < 2)
-		return (0);
-	printf("%s\n", ft_itoa(95123));
+	char dst[] = "abcdefghijklmnopqrstuvwxyz";
+	const char src[] = "string with\200inside !";
+//	size_t n;
+
+//	n = 21;
+//	if (argc < 2)
+//		return (0);
+	printf("%s\n", src);
+	printf("%s\n", memccpy(dst, src, 0600, 21));
+	printf("%s\n", ft_memccpy(dst, src, 0600, 21));
 	return (0);
 }
