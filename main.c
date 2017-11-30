@@ -15,15 +15,14 @@
 
 int		main(void)
 {
-	char dst[] = "abcdefghijklmnopqrstuvwxyz";
-	const char src[] = "string with\200inside !";
-//	size_t n;
+	char	*src = "stars";
+	char	dst[50];
+	size_t	max = 20;
 
-//	n = 21;
 //	if (argc < 2)
 //		return (0);
-	printf("%s\n", src);
-	printf("%s\n", memccpy(dst, src, 0600, 21));
-	printf("%s\n", ft_memccpy(dst, src, 0600, 21));
+	ft_putstr(strncpy(dst, src, max));
+	ft_putchar('\n');
+	ft_putstr(ft_strncpy(dst, src, max));
 	return (0);
 }

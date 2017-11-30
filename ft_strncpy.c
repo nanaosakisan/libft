@@ -14,7 +14,18 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
+	size_t i;
+
+	i = ft_strlen(src);
 	ft_bzero(dst, len);
 	ft_memcpy(dst, src, len);
+	if (len > i)
+	{
+		while (len != i)
+		{
+			dst[i] = '\0';
+			i++;
+		}
+	}
 	return (dst);
 }
