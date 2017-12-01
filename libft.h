@@ -82,6 +82,6 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len);
 char	*ft_strtrim(const char *s);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-int		main(void);
+int		main(int ac, char **av);
 
 #endif

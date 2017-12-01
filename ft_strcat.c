@@ -17,16 +17,22 @@ char	*ft_strcat(char *s1, const char *s2)
 	int i;
 	int j;
 
-	i = 0;
-	j = 0;
-	while (s1[i])
+	if (ft_strlen(s1) == 0)
 	{
-		if (s1[i + 1] == '\0')
+		ft_memcpy(s1, s2, ft_strlen(s2));
+		s1[ft_strlen(s2)] = '\0';
+	}
+	else
+	{
+		i = ft_strlen(s1);
+		j = -1;
+
+		while(s2[++j])
 		{
-			s1[i + 1] = s2[j];
-			j++;
+			s1[i] = s2[j];
+			i++;
 		}
-		i++;
+		s1[i] = '\0';
 	}
 	return (s1);
 }
