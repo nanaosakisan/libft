@@ -12,22 +12,23 @@
 
 #include "libft.h"
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 int		main(int ac, char **av)
 {
-	// char	*str = "the cake is a lie";
-	char	buff1[50] = "Toto";
-	char	buff2[50] = "buh";
-	size_t	max = 5;
+		char	*src = "this is a good nyancat !\r\n";
+		char	dst1[50];
+		char	dst2[50];
+		int		size = 25;
 
 	if (!ac || !av)
 		return (0);
 //	if (argc < 2)
 //		return (0);
-
-	printf("1 = %zu\n", strlcat(buff1, buff2, max));
-	printf("%s\n", buff1);
-	// printf("2 = %zu\n", ft_strlcat(buff2, str, max));
-	// printf("%s\n", buff2);
+	ft_putstr(memmove(dst1, src, size));
+	ft_putchar('\n');
+	ft_putstr(ft_memmove(dst2, src, size));
 	return (0);
 }

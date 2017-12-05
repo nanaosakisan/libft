@@ -21,11 +21,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	dest = (unsigned char *)dst;
 	source = (unsigned char *)src;
-	if (!len)
+	if (!len || src == dst)
 		return (dest);
-	else if (source == dest)
-		return (dest);
-	else if (source > dest)
+	else if (src > dst)
 	{
 		ft_memcpy(dest, source, len);
 		return (dest);
@@ -38,7 +36,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		{
 			dest[i] = source[j];
 			i--;
-			j--;
+			j--;;
 		}
 		return (dest);
 	}

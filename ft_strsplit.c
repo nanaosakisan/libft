@@ -91,7 +91,8 @@ char		**ft_strsplit(const char *s, char c)
 	i = 0;
 	if (!s || !c)
 		return (NULL);
-	array = ft_malloc_array(s, c);
+	if (!(array = ft_malloc_array(s, c)))
+		return (NULL);
 	ft_fill_array(array, s, c);
 	while (array[i])
 	{

@@ -14,7 +14,7 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char		*dest;
+ 	char		*dest;
 	const char	*source;
 
 	dest = dst;
@@ -22,7 +22,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (n > 0)
 	{
 		if ((*dest++ = *source++) == c)
-			return (dest);
+			return ((void *)dest);
 		n--;
 	}
 	return (NULL);

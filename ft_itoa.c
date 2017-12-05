@@ -41,24 +41,26 @@ char	*ft_itoa(int n)
 {
 	char	*ret;
 	int		i;
+	long	num;
 
 	i = 0;
+	num = (long)n;
 	if (!(ret = ft_strnew(11)))
 		return (NULL);
-	if (n < 0)
+	if (num < 0)
 	{
 		ret[i] = 45;
-		n = n * -1;
+		num = num * -1;
 		i++;
 	}
-	if (n < 10)
+	if (num < 10)
 		ret[i] = n + 48;
-	if (n >= 10)
+	if (num >= 10)
 	{
-		while (n != 0)
+		while (num != 0)
 		{
-			ret[i] = n % 10 + 48;
-			n = n / 10;
+			ret[i] = num % 10 + 48;
+			num = num / 10;
 			i++;
 		}
 	}
