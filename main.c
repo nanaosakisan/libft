@@ -18,17 +18,22 @@
 
 int		main(int ac, char **av)
 {
-		char	*src = "this is a good nyancat !\r\n";
-		char	dst1[50];
-		char	dst2[50];
-		int		size = 25;
+	char	*src = "this is a good nyancat !\r\n";
+	char	dst1[50];
+	char	dst2[50];
+	int		size = strlen(src);
+
+	char	*tmp1;
+	char	*tmp2;
 
 	if (!ac || !av)
 		return (0);
 //	if (argc < 2)
 //		return (0);
-	ft_putstr(memmove(dst1, src, size));
-	ft_putchar('\n');
-	ft_putstr(ft_memmove(dst2, src, size));
+	tmp1 = memmove(dst1, src, size);
+	tmp2 = ft_memmove(dst2, src, size);
+
+	printf("dst1 = %s\n", tmp1);
+	printf("dst2 = %s\n", tmp2);
 	return (0);
 }

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -30,8 +31,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		i = ft_strlen(dst);
-		j = ft_strlen(src);
+		i = ft_strlen((const char *)dst);
+		j = ft_strlen((const char *)src);
+		printf("i = %zu\n", i);
+		printf("j = %zu\n", j);
 		while (i > len)
 		{
 			dest[i] = source[j];

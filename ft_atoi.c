@@ -14,9 +14,9 @@
 
 int		ft_atoi(const char *str)
 {
-	int i;
-	int	neg;
-	int	ret;
+	int 			i;
+	int				neg;
+	unsigned long	ret;
 
 	i = 0;
 	neg = 1;
@@ -35,5 +35,7 @@ int		ft_atoi(const char *str)
 		ret = (ret * 10) + (str[i] - 48);
 		i++;
 	}
-	return (ret * neg);
+	if ((unsigned long long)ret > 9223372036854775807)
+		return (neg == -1) ? 0 : -1;
+	return ((int)ret * neg);
 }
