@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
@@ -27,8 +26,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	{
 		i = ft_strlen(s1);
 		j = -1;
-
-		while(s2[++j] && j < n)
+		while (s2[++j] && j < n)
 		{
 			s1[i] = s2[j];
 			i++;

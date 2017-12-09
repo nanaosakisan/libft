@@ -82,10 +82,10 @@ static	char		**ft_fill_array(char **array, const char *s, char c)
 	return (array);
 }
 
-char		**ft_strsplit(const char *s, char c)
+char				**ft_strsplit(const char *s, char c)
 {
-	char			**array;
-	int				i;
+	char	**array;
+	int		i;
 
 	array = NULL;
 	i = 0;

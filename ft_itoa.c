@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	*ft_reverse_str(char *src)
+static char		*ft_reverse_str(char *src)
 {
 	char	*dst;
 	int		len;
@@ -37,7 +37,7 @@ static char	*ft_reverse_str(char *src)
 	return (dst);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*ret;
 	int		i;
@@ -49,9 +49,8 @@ char	*ft_itoa(int n)
 		return (NULL);
 	if (num < 0)
 	{
-		ret[i] = 45;
+		ret[i++] = 45;
 		num = num * -1;
-		i++;
 	}
 	if (num < 10)
 		ret[i] = n + 48;

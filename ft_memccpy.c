@@ -25,7 +25,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		*dest = *source;
 		if (*dest == car)
-			return((void *)dest + 1);
+			return ((void *)dest + 1);
 		n--;
 		dest++;
 		source++;
