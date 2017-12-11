@@ -70,7 +70,8 @@ SRC_NAME =	ft_atoi.c		\
 			ft_strsub.c		\
 			ft_strtrim.c	\
 			ft_toupper.c	\
-			ft_tolower.c
+			ft_tolower.c	\
+			main.c
 
 SRC =  $(addprefix $(SRC_PATH), $(SRC_NAME))
 
@@ -87,6 +88,7 @@ all: $(NAME)
 $(NAME):
 	gcc $(SRC) $(INCLUDE) $(FLAGS)
 	ar rc libft.a $(OBJ)
+	gcc main.c libft.a
 
 clean:
 	rm -f $(OBJ)

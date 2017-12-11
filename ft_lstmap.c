@@ -21,7 +21,7 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	first = NULL;
 	while (lst)
 	{
-		if(!first) 
+		if (!first)
 		{
 			ret = f(ft_lstnew(lst, lst->content_size));
 			first = ret;
