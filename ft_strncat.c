@@ -20,16 +20,17 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	if (ft_strlen(s1) == 0)
 	{
 		ft_memcpy(s1, s2, n);
-		s1[ft_strlen(s2)] = '\0';
+		s1[n] = '\0';
 	}
 	else
 	{
 		i = ft_strlen(s1);
-		j = -1;
-		while (s2[++j] && j < n)
+		j = 0;
+		while (s2[j] && j < n)
 		{
 			s1[i] = s2[j];
 			i++;
+			j++;
 		}
 		s1[i] = '\0';
 	}

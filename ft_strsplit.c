@@ -94,11 +94,5 @@ char				**ft_strsplit(const char *s, char c)
 	if (!(array = ft_malloc_array(s, c)))
 		return (NULL);
 	ft_fill_array(array, s, c);
-	while (array[i])
-	{
-		ft_putstr(array[i]);
-		ft_putchar('\n');
-		i++;
-	}
 	return (array);
 }

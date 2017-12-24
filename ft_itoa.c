@@ -12,56 +12,53 @@
 
 #include "libft.h"
 
-static char		*ft_reverse_str(char *src)
+static int		ft_count_number(long n)
 {
-	char	*dst;
-	int		len;
-	int		i;
+	int	cpt;
 
-	len = ft_strlen(src);
-	i = 0;
-	if (!(dst = ft_strnew(len)))
-		return (NULL);
-	if (src[0] == '-')
+	cpt = 0;
+	if (n < 0)
 	{
-		dst[i] = '-';
-		i++;
+		cpt++;
+		n = n * -1;
 	}
-	--len;
-	while (src[len] && src[len] != '-')
+	if (n >= 0 && n < 10)
+		return (cpt++);
+	while (n)
 	{
-		dst[i] = src[len];
-		len--;
-		i++;
+		cpt++;
+		if (n >= 10)
+			n = n / 10;
+		else
+			return (cpt++);
 	}
-	return (dst);
+	return (cpt);
 }
 
 char			*ft_itoa(int n)
 {
-	char	*ret;
 	int		i;
 	long	num;
+	char	*ret;
 
-	i = 0;
 	num = (long)n;
-	if (!(ret = ft_strnew(11)))
+	i = ft_count_number(num);
+	if (!(ret = ft_strnew(i)))
 		return (NULL);
 	if (num < 0)
 	{
-		ret[i++] = 45;
+		ret[0] = '-';
 		num = num * -1;
 	}
 	if (num < 10)
-		ret[i] = n + 48;
+		ret[i] = num + 48;
 	if (num >= 10)
 	{
-		while (num != 0)
+		while (num != 0 && --i >= 0)
 		{
 			ret[i] = num % 10 + 48;
 			num = num / 10;
-			i++;
 		}
 	}
-	return (ft_reverse_str(ret));
+	return (ret);
 }

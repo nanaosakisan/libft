@@ -16,6 +16,8 @@ void	ft_strclr(char *s)
 {
 	int size;
 
+	if (!s)
+		return ;
 	size = 0;
 	size = ft_strlen(s);
 	while (size >= 0)
